@@ -29,36 +29,36 @@ export const post: APIRoute = async ({ request }) => {
 
   // validate email and message
   if (!email || !message) {
-    return {
-      status: 400,
-      body: JSON.stringify({
+    return new Response(
+      JSON.stringify({
         message: "Email and message are required",
       }),
-    };
+      { status: 400 }
+    );
   } else if (!email.includes("@")) {
-    return {
-      status: 400,
-      body: JSON.stringify({
+    return new Response(
+      JSON.stringify({
         message: "Invalid email",
       }),
-    };
+      { status: 400 }
+    );
   } else if (message.length < 1 || message.length > 2000) {
-    return {
-      status: 400,
-      body: JSON.stringify({
+    return new Response(
+      JSON.stringify({
         message: "Message must be less than 2000 characters",
       }),
-    };
+      { status: 400 }
+    );
   }
 
   // if rate limit is exceeded, return error
   if (!success) {
-    return {
-      status: 429,
-      body: JSON.stringify({
+    return new Response(
+      JSON.stringify({
         message: `Rate limit exceeded. Try again in ${Math.round((reset - Date.now()) / 1000)} seconds`,
       }),
-    };
+      { status: 429 }
+    );
   }
 
   return bot.telegram
@@ -71,11 +71,11 @@ export const post: APIRoute = async ({ request }) => {
       };
     })
     .catch((error) => {
-      return {
-        status: 500,
-        body: JSON.stringify({
+      return new Response(
+        JSON.stringify({
           message: error.message,
         }),
-      };
+        { status: 500 }
+      );
     });
 };
