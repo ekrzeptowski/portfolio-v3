@@ -1,46 +1,48 @@
-import type { APIRoute } from 'astro';
-import { Telegraf } from 'telegraf';
+import type { APIRoute } from "astro";
+import { Telegraf } from "telegraf";
+
+export const prerender = false;
 
 export const post: APIRoute = async ({ request }) => {
-  const bot = new Telegraf(import.meta.env.TELEGRAM_BOT_TOKEN ?? '');
+  const bot = new Telegraf(import.meta.env.TELEGRAM_BOT_TOKEN ?? "");
   // parse form data
   const body = await request.formData();
-  const email = body.getAll('email')[0].toString();
-  const message = body.getAll('message')[0].toString();
+  const email = body.getAll("email")[0].toString();
+  const message = body.getAll("message")[0].toString();
 
-  console.log('email', email);
-  console.log('message', message);
+  console.log("email", email);
+  console.log("message", message);
 
   // validate email and message
   if (!email || !message) {
     return {
       status: 400,
       body: JSON.stringify({
-        message: 'Email and message are required',
+        message: "Email and message are required",
       }),
     };
-  } else if (!email.includes('@')) {
+  } else if (!email.includes("@")) {
     return {
       status: 400,
       body: JSON.stringify({
-        message: 'Invalid email',
+        message: "Invalid email",
       }),
     };
   } else if (message.length < 1 || message.length > 2000) {
     return {
       status: 400,
       body: JSON.stringify({
-        message: 'Message must be less than 2000 characters',
+        message: "Message must be less than 2000 characters",
       }),
     };
   }
 
   return bot.telegram
-    .sendMessage(import.meta.env.TELEGRAM_CHAT_ID ?? '', `New message from ${email}:\n${message}`)
+    .sendMessage(import.meta.env.TELEGRAM_CHAT_ID ?? "", `New message from ${email}:\n${message}`)
     .then(() => {
       return {
         body: JSON.stringify({
-          message: 'Message sent',
+          message: "Message sent",
         }),
       };
     })
