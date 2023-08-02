@@ -1,6 +1,17 @@
 import type { APIRoute } from "astro";
 import { Telegraf } from "telegraf";
+import { Ratelimit } from "@upstash/ratelimit";
+import { createClient } from "@vercel/kv";
 
+const kv = createClient({
+  url: import.meta.env.KV_REST_API_URL ?? "",
+  token: import.meta.env.KV_REST_API_TOKEN ?? "",
+});
+
+const ratelimit = new Ratelimit({
+  redis: kv,
+  limiter: Ratelimit.slidingWindow(1, "10s"),
+});
 export const prerender = false;
 
 export const post: APIRoute = async ({ request }) => {
@@ -9,6 +20,12 @@ export const post: APIRoute = async ({ request }) => {
   const body = await request.formData();
   const email = body.getAll("email")[0].toString();
   const message = body.getAll("message")[0].toString();
+
+  // rate limit requests to 1 per 10 seconds
+  // get ip from request headers
+  const ip = request.headers.get("CF-Connecting-IP") ?? request.headers.get("x-real-ip") ?? "127.0.0.1";
+
+  const { reset, success } = await ratelimit.limit(ip);
 
   // validate email and message
   if (!email || !message) {
@@ -30,6 +47,16 @@ export const post: APIRoute = async ({ request }) => {
       status: 400,
       body: JSON.stringify({
         message: "Message must be less than 2000 characters",
+      }),
+    };
+  }
+
+  // if rate limit is exceeded, return error
+  if (!success) {
+    return {
+      status: 429,
+      body: JSON.stringify({
+        message: `Rate limit exceeded. Try again in ${Math.round((reset - Date.now()) / 1000)} seconds`,
       }),
     };
   }
