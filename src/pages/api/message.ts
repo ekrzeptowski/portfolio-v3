@@ -10,9 +10,6 @@ export const post: APIRoute = async ({ request }) => {
   const email = body.getAll("email")[0].toString();
   const message = body.getAll("message")[0].toString();
 
-  console.log("email", email);
-  console.log("message", message);
-
   // validate email and message
   if (!email || !message) {
     return {
