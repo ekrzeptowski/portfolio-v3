@@ -1,0 +1,24 @@
+---
+import { t } from "i18next";
+import Link from "../ui/Link.astro";
+import { config } from "@/config";
+import Heading from "../ui/Heading.astro";
+import { ContactForm } from "../sections/ContactForm";
+---
+
+<section>
+  <Heading level={2}>{t("sections.contact.title")}</Heading>
+  <p>
+    {t("sections.contact.send_dm")}
+    <Link href={`https://twitter.com/${config.contact.twitter}`}>
+      {t("sections.contact.on_twitter")}
+    </Link>
+  </p>
+  <p>
+    {t("sections.contact.you_can_also")}
+    <Link href={`mailto:${config.contact.email}`}>
+      {t("sections.contact.send_email")}
+    </Link>
+  </p>
+  <ContactForm client:visible />
+</section>

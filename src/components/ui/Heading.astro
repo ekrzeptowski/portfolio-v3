@@ -1,0 +1,23 @@
+---
+import type { HTMLAttributes } from "astro/types";
+interface Props extends HTMLAttributes<"h1"> {
+  children: any;
+  level: 1 | 2 | 3 | 4 | 5 | 6;
+}
+
+const { level, ...props } = Astro.props as Props;
+const Tag = `h${level}` as any;
+
+const fontSizes = {
+  1: "text-5xl",
+  2: "text-4xl",
+  3: "text-3xl",
+  4: "text-2xl",
+  5: "text-xl",
+  6: "text-lg",
+};
+---
+
+<Tag {...props} class={fontSizes[level]}>
+  <slot />
+</Tag>

@@ -1,0 +1,19 @@
+{
+  "home": {
+    "description": "Ewelina Krzeptowska - Programista Full Stack"
+  },
+  "sections": {
+    "contact": {
+      "title": "Kontakt",
+      "send_dm": "Wyślij wiadomość na",
+      "on_twitter": "X (Twitterze)",
+      "you_can_also": "Możesz też",
+      "send_email": "wysłać mi emaila",
+      "email": "email",
+      "message": "Wiadomość",
+      "send": "Wyślij",
+      "message_sent": "Twoja wiadomość została wysłana!",
+      "message_too_long": "Twoja wiadomość jest za długa. Ogranicz ją do {{messageLimit}} znaków."
+    }
+  }
+}

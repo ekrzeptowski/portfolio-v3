@@ -16,10 +16,8 @@ export const prerender = false;
 
 export const post: APIRoute = async ({ request }) => {
   const bot = new Telegraf(import.meta.env.TELEGRAM_BOT_TOKEN ?? "");
-  // parse form data
-  const body = await request.formData();
-  const email = body.getAll("email")[0].toString();
-  const message = body.getAll("message")[0].toString();
+  // parse form json
+  const { email, message } = await request.json();
 
   // rate limit requests to 1 per 10 seconds
   // get ip from request headers

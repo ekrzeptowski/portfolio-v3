@@ -1,0 +1,19 @@
+{
+  "home": {
+    "description": "Ewelina Krzeptowska - Full Stack Developer"
+  },
+  "sections": {
+    "contact": {
+      "title": "Contact",
+      "send_dm": "Send me a DM on",
+      "on_twitter": "X (Twitter)",
+      "you_can_also": "You can also",
+      "send_email": "send me an email",
+      "email": "email",
+      "message": "Message",
+      "send": "Send",
+      "message_sent": "Your message has been sent!",
+      "message_too_long": "Message is too long. Please limit your message to {{messageLimit}} characters."
+    }
+  }
+}
