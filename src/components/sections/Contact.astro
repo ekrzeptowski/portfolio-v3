@@ -1,9 +1,11 @@
 ---
 import { t } from "i18next";
+import { Trans } from "astro-i18next/components";
 import Link from "../ui/Link.astro";
 import { config } from "@/config";
 import Heading from "../ui/Heading.astro";
 import { ContactForm } from "../sections/ContactForm";
+import { CurrentTime } from "../sections/CurrentTime";
 ---
 
 <section>
@@ -20,5 +22,8 @@ import { ContactForm } from "../sections/ContactForm";
       {t("sections.contact.send_email")}
     </Link>
   </p>
-  <ContactForm client:visible />
+  <CurrentTime client:only="react" />
+  <div class="flex justify-center">
+    <ContactForm client:visible />
+  </div>
 </section>

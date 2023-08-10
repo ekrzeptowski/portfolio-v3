@@ -13,7 +13,10 @@
       "message": "Wiadomość",
       "send": "Wyślij",
       "message_sent": "Twoja wiadomość została wysłana!",
-      "message_too_long": "Twoja wiadomość jest za długa. Ogranicz ją do {{messageLimit}} znaków."
+      "message_too_long": "Twoja wiadomość jest za długa. Ogranicz ją do {{messageLimit}} znaków.",
+      "current_time": "Teraz u mnie jest <1>{{time}}</1>",
+      "im_asleep": "W tej chwili mogę nie odpowiadać, bo śpię. Odpiszę jak tylko się obudzę."
+
     }
   }
 }
