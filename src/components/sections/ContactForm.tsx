@@ -28,9 +28,10 @@ export function ContactForm() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    }).then((response) => response.json());
+    });
+    const resJson = await res.json();
 
-    if (res.success) {
+    if (res.status === 200) {
       setSuccess(true);
       setError("");
       setEmail("");
@@ -38,14 +39,14 @@ export function ContactForm() {
       return;
     }
 
-    setError(res.message);
+    setError(resJson.message);
   };
 
   const messageLimit = 2000;
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="max-w-lg">
+      <form onSubmit={handleSubmit} className="max-w-lg w-full">
         <div className="mb-4">
           <div className="mb-2">
             <label htmlFor="email" className="uppercase font-bold text-gray-800 text-sm">
