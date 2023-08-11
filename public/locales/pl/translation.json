@@ -3,6 +3,13 @@
     "description": "Ewelina Krzeptowska - Programista Full Stack"
   },
   "sections": {
+    "about": {
+      "title": "O mnie",
+      "content": [
+        "Witam i witam na mojej stronie portfolio. Nazywam się Ewelina Krzeptowska i jestem studentem informatyki, który pasjonuje się tworzeniem stron internetowych. Mam doświadczenie w tworzeniu aplikacji internetowych full stack przy użyciu różnych technologii i frameworków, takich jak React, Node.js, MongoDB, Express, Bootstrap, HTML, CSS i JavaScript. Lubię uczyć się nowych umiejętności i odkrywać nowe wyzwania w dziedzinie tworzenia stron internetowych.",
+        "Na tej stronie można znaleźć niektóre projekty, nad którymi pracowałem, a także moje CV i dane kontaktowe. Obecnie szukam pracy jako programista stron internetowych z pełnym stosem, więc skontaktuj się ze mną, jeśli jesteś zainteresowany zatrudnieniem mnie lub współpracą ze mną. Dziękuję za odwiedzenie mojej strony internetowej i mam nadzieję, że Ci się spodoba. \uD83D\uDE0A"
+      ]
+    },
     "contact": {
       "title": "Kontakt",
       "send_dm": "Wyślij wiadomość na",
@@ -16,7 +23,6 @@
       "message_too_long": "Twoja wiadomość jest za długa. Ogranicz ją do {{messageLimit}} znaków.",
       "current_time": "Teraz u mnie jest <1>{{time}}</1>",
       "im_asleep": "W tej chwili mogę nie odpowiadać, bo śpię. Odpiszę jak tylko się obudzę."
-
     }
   }
 }
