@@ -1,0 +1,9 @@
+---
+import { t } from "i18next";
+import { skills } from "@/data/skills";
+import Heading from "../ui/Heading.astro";
+---
+
+<Heading level={2}>{t("sections.skills.title")}</Heading>
+
+{skills.map((skill) => <li>{skill.name}</li>)}

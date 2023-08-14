@@ -10,6 +10,13 @@
         "Na tej stronie można znaleźć niektóre projekty, nad którymi pracowałem, a także moje CV i dane kontaktowe. Obecnie szukam pracy jako programista stron internetowych z pełnym stosem, więc skontaktuj się ze mną, jeśli jesteś zainteresowany zatrudnieniem mnie lub współpracą ze mną. Dziękuję za odwiedzenie mojej strony internetowej i mam nadzieję, że Ci się spodoba. \uD83D\uDE0A"
       ]
     },
+    "skills": {
+      "title": "Umiejętności"
+    },
+    "education": {
+      "title": "Edukacja i certifikaty",
+      "present": "obecnie"
+    },
     "contact": {
       "title": "Kontakt",
       "send_dm": "Wyślij wiadomość na",

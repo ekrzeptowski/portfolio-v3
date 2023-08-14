@@ -10,6 +10,13 @@
         "In this website, you can find some of the projects that I have worked on, as well as my resume and contact information. I am currently looking for a job as a full stack web developer, so feel free to reach out to me if you are interested in hiring me or collaborating with me. Thank you for visiting my website and I hope you enjoy it. \uD83D\uDE0A"
       ]
     },
+    "skills": {
+      "title": "Skills"
+    },
+    "education": {
+      "title": "Education & Certificates",
+      "present": "present"
+    },
     "contact": {
       "title": "Contact",
       "send_dm": "Send me a DM on",

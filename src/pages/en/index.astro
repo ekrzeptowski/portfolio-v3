@@ -3,11 +3,15 @@ import { changeLanguage, t } from "i18next";
 import Layout from "@/layouts/Layout.astro";
 import Contact from "@/components/sections/Contact.astro";
 import About from "@/components/sections/About.astro";
+import Skills from "../../components/sections/Skills.astro";
+import Education from "../../components/sections/Education.astro";
 
 changeLanguage("en");
 ---
 
 <Layout title="Ewelina Krzeptowska" description={t("home.description") as string}>
   <About />
+  <Skills />
+  <Education />
   <Contact />
 </Layout>
