@@ -1,6 +1,7 @@
 import { Trans, useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { config } from "@/config";
+import i18next from "i18next";
 
 function getHoursAtLocation(timezone: string) {
   return parseInt(
@@ -18,7 +19,7 @@ export function CurrentTime() {
   const [time, setTime] = useState(getCurrentTime());
 
   function getCurrentTime() {
-    return new Date().toLocaleTimeString(undefined, {
+    return new Date().toLocaleTimeString(i18next.language, {
       timeZone: config.timezone,
       hour: "2-digit",
       minute: "2-digit",
