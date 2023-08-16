@@ -4,6 +4,7 @@ import i18next, { t } from "i18next";
 import Heading from "../ui/Heading.astro";
 import { education } from "@/data/education";
 import { TbSchool, TbCertificate, TbExternalLink } from "react-icons/tb";
+import type { Education } from "../../types/Education";
 
 // sort education by date descending, put degrees first
 
@@ -55,7 +56,9 @@ const educationSorted = [...degrees, ...nonDegrees];
                   </a>
                 </>
               ) : (
-                `${item["degree_" + i18next.language]}, ${item["area_" + i18next.language]}`
+                `${item[("degree_" + i18next.language) as keyof Education]}, ${
+                  item[("area_" + i18next.language) as keyof Education]
+                }`
               )}
             </div>
           </div>

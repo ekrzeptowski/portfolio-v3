@@ -13,8 +13,6 @@ interface Degree extends EducationBase {
   area_en: string;
   degree_pl: string;
   degree_en: string;
-
-  [key: string]: string | Date | { start: Date; end: Date | null };
 }
 
 interface Certificate extends EducationBase {
