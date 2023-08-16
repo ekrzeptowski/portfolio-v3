@@ -10,7 +10,7 @@
     "check": "astro check",
     "astro": "astro",
     "i18n:generate": "astro-i18next generate",
-    "format": "prettier -w ."
+    "format": "prettier -w **/*.astro ."
   },
   "dependencies": {
     "@astrojs/react": "^2.2.1",
