@@ -15,7 +15,8 @@
     },
     "education": {
       "title": "Education & Certificates",
-      "present": "present"
+      "present": "present",
+      "show_credential": "Show credential"
     },
     "contact": {
       "title": "Contact",

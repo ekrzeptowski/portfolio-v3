@@ -3,6 +3,7 @@ import i18next, { t } from "i18next";
 
 import Heading from "../ui/Heading.astro";
 import { education } from "@/data/education";
+import { TbSchool, TbCertificate, TbExternalLink } from "react-icons/tb";
 
 // sort education by date descending, put degrees first
 
@@ -24,29 +25,50 @@ const nonDegrees = education.filter((item) => !("degree_" + i18next.language in 
 const educationSorted = [...degrees, ...nonDegrees];
 ---
 
-<Heading level={2}>{t("sections.education.title")}</Heading>
+<section id="education">
+  <Heading level={2}>{t("sections.education.title")}</Heading>
 
-{
-  educationSorted.map((item) => (
-    <div class="mb-4">
-      <div class="flex items-center">
-        <div class="flex-1">
-          <div class="text-lg font-semibold">{item.name}</div>
-          <div class="text-sm">
-            {"issuer" in item
-              ? item.issuer
-              : `${item["degree_" + i18next.language]}, ${item["area_" + i18next.language]}`}
+  <div class="flex flex-col divide-y-2">
+    {
+      educationSorted.map((item) => (
+        <div class="flex items-center max-sm:flex-wrap py-4">
+          <div class="rounded-full border-2 border-gray-500 p-2 mr-2">
+            {"degree_" + i18next.language in item ? (
+              <TbSchool className="text-3xl text-gray-500" />
+            ) : (
+              <TbCertificate className="text-3xl text-gray-500" />
+            )}
+          </div>
+          <div class="flex-1">
+            <div class="text-lg font-semibold">{item.name}</div>
+            <div class="text-sm">
+              {"issuer" in item ? (
+                <>
+                  {item.issuer}
+                  <a
+                    class="border-2 border-blue-500 text-blue-500 rounded inline-flex items-center px-2 py-1 ml-2 hover:bg-blue-500 hover:text-white"
+                    target="_blank"
+                    href={item.link}
+                  >
+                    {t("sections.education.show_credential")}
+                    <TbExternalLink />
+                  </a>
+                </>
+              ) : (
+                `${item["degree_" + i18next.language]}, ${item["area_" + i18next.language]}`
+              )}
+            </div>
+          </div>
+          <div class="text-sm text-gray-500 max-sm:basis-full max-sm:text-right max-sm:pt-4">
+            {item.date instanceof Date
+              ? item.date.toLocaleString(i18next.language, { month: "long", year: "numeric" })
+              : item.date.start.toLocaleString(i18next.language, { month: "long", year: "numeric" }) +
+                " - " +
+                (item.date.end?.toLocaleString(i18next.language, { month: "long", year: "numeric" }) ??
+                  t("sections.education.present"))}
           </div>
         </div>
-        <div class="text-sm text-gray-500">
-          {item.date instanceof Date
-            ? item.date.toLocaleString(i18next.language, { month: "long", year: "numeric" })
-            : item.date.start.toLocaleString(i18next.language, { month: "long", year: "numeric" }) +
-              " - " +
-              (item.date.end?.toLocaleString(i18next.language, { month: "long", year: "numeric" }) ??
-                t("sections.education.present"))}
-        </div>
-      </div>
-    </div>
-  ))
-}
+      ))
+    }
+  </div>
+</section>
