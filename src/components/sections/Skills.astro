@@ -2,8 +2,11 @@
 import { t } from "i18next";
 import { skills } from "@/data/skills";
 import Heading from "../ui/Heading.astro";
+import Section from "../ui/Section.astro";
 ---
 
-<Heading level={2}>{t("sections.skills.title")}</Heading>
+<Section id="skills">
+  <Heading level={2}>{t("sections.skills.title")}</Heading>
 
-{skills.map((skill) => <li>{skill.name}</li>)}
+  {skills.map((skill) => <li>{skill.name}</li>)}
+</Section>

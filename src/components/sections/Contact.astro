@@ -5,9 +5,10 @@ import { config } from "@/config";
 import Heading from "../ui/Heading.astro";
 import { ContactForm } from "../sections/ContactForm";
 import { CurrentTime } from "../sections/CurrentTime";
+import Section from "../ui/Section.astro";
 ---
 
-<section>
+<Section id="contact">
   <Heading level={2}>{t("sections.contact.title")}</Heading>
   <p>
     {t("sections.contact.send_dm")}
@@ -25,4 +26,4 @@ import { CurrentTime } from "../sections/CurrentTime";
   <div class="flex justify-center">
     <ContactForm client:visible />
   </div>
-</section>
+</Section>

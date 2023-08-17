@@ -5,6 +5,7 @@ import Heading from "../ui/Heading.astro";
 import { education } from "@/data/education";
 import { TbSchool, TbCertificate, TbExternalLink } from "react-icons/tb";
 import type { Education } from "../../types/Education";
+import Section from "../ui/Section.astro";
 
 // sort education by date descending, put degrees first
 
@@ -26,7 +27,7 @@ const nonDegrees = education.filter((item) => !("degree_" + i18next.language in 
 const educationSorted = [...degrees, ...nonDegrees];
 ---
 
-<section id="education">
+<Section id="education">
   <Heading level={2}>{t("sections.education.title")}</Heading>
 
   <div class="flex flex-col divide-y-2">
@@ -74,4 +75,4 @@ const educationSorted = [...degrees, ...nonDegrees];
       ))
     }
   </div>
-</section>
+</Section>
