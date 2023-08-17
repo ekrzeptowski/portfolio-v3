@@ -33,8 +33,8 @@ const educationSorted = [...degrees, ...nonDegrees];
   <div class="flex flex-col divide-y-2">
     {
       educationSorted.map((item) => (
-        <div class="flex items-center max-sm:flex-wrap py-4">
-          <div class="rounded-full border-2 border-gray-500 p-2 mr-2">
+        <div class="flex items-center py-4 max-sm:flex-wrap">
+          <div class="mr-2 rounded-full border-2 border-gray-500 p-2">
             {"degree_" + i18next.language in item ? (
               <TbSchool className="text-3xl text-gray-500" />
             ) : (
@@ -48,7 +48,7 @@ const educationSorted = [...degrees, ...nonDegrees];
                 <>
                   {item.issuer}
                   <a
-                    class="border-2 border-blue-500 text-blue-500 rounded inline-flex items-center px-2 py-1 ml-2 hover:bg-blue-500 hover:text-white"
+                    class="ml-2 inline-flex items-center rounded border-2 border-blue-500 px-2 py-1 text-blue-500 hover:bg-blue-500 hover:text-white"
                     target="_blank"
                     href={item.link}
                   >
@@ -63,7 +63,7 @@ const educationSorted = [...degrees, ...nonDegrees];
               )}
             </div>
           </div>
-          <div class="text-sm text-gray-500 max-sm:basis-full max-sm:text-right max-sm:pt-4">
+          <div class="text-sm text-gray-500 max-sm:basis-full max-sm:pt-4 max-sm:text-right">
             {item.date instanceof Date
               ? item.date.toLocaleString(i18next.language, { month: "long", year: "numeric" })
               : item.date.start.toLocaleString(i18next.language, { month: "long", year: "numeric" }) +

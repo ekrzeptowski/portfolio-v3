@@ -46,16 +46,16 @@ export function ContactForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="max-w-lg w-full">
+      <form onSubmit={handleSubmit} className="w-full max-w-lg">
         <div className="mb-4">
           <div className="mb-2">
-            <label htmlFor="email" className="uppercase font-bold text-gray-800 text-sm">
+            <label htmlFor="email" className="text-sm font-bold uppercase text-gray-800">
               {t("sections.contact.email")}
             </label>
           </div>
           <input
             type="email"
-            className="w-full appearance-none border rounded py-2 px-3 text-gray-800 leading-tight transition-shadow focus:ring focus:ring-offset-1 focus:ring-blue-500 focus:outline-none"
+            className="w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-800 shadow transition-shadow focus:outline-none focus:ring focus:ring-blue-500 focus:ring-offset-1"
             required
             id="email"
             aria-describedby="emailHelp"
@@ -66,12 +66,12 @@ export function ContactForm() {
         </div>
         <div className="mb-4">
           <div className="mb-2">
-            <label htmlFor="message" className="uppercase font-bold text-gray-800 text-sm">
+            <label htmlFor="message" className="text-sm font-bold uppercase text-gray-800">
               {t("sections.contact.message")}
             </label>
           </div>
           <textarea
-            className="w-full shadow appearance-none resize-none border rounded py-2 px-3 text-gray-800 leading-tight transition-shadow focus:ring focus:ring-offset-1 focus:ring-blue-500 focus:outline-none"
+            className="w-full resize-none appearance-none rounded border px-3 py-2 leading-tight text-gray-800 shadow transition-shadow focus:outline-none focus:ring focus:ring-blue-500 focus:ring-offset-1"
             id="message"
             rows={8}
             value={message}
@@ -79,7 +79,7 @@ export function ContactForm() {
             onInput={(e) => setMessage((e.target as HTMLTextAreaElement).value)}
           ></textarea>
         </div>
-        <div className="flex items-center justify-between mb-4">
+        <div className="mb-4 flex items-center justify-between">
           <div className={message.length > messageLimit ? "text-red-500" : ""}>
             {message.length} / {messageLimit}
           </div>
@@ -87,7 +87,7 @@ export function ContactForm() {
           {error && <div role="alert">{error}</div>}
           <button
             type="submit"
-            className="flex items-center text-white bg-blue-500 py-2 px-3 rounded transition-shadow hover:ring"
+            className="flex items-center rounded bg-blue-500 px-3 py-2 text-white transition-shadow hover:ring"
           >
             <BiPaperPlane className="mr-1" />
             {t("sections.contact.send")}
