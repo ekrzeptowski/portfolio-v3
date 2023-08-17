@@ -1,4 +1,6 @@
-export const skills = [
+import type { Skills } from "@/types/Skills";
+
+export const skills: Skills[] = [
   {
     name: "JavaScript",
     icon: "javascript",
