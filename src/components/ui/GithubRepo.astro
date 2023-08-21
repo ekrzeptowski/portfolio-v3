@@ -1,0 +1,23 @@
+---
+import { TbStarFilled } from "react-icons/tb";
+import Heading from "./Heading.astro";
+const { repo } = Astro.props;
+
+const githubUrl = "https://api.github.com/repos/" + repo;
+const github = await fetch(githubUrl).then((res) => res.json());
+const { name, description, stargazers_count, license, language, html_url } = github;
+---
+
+<div class="not-prose inline-flex min-w-[300px] flex-col rounded-lg border p-2">
+  <Heading level={2}>{name}</Heading>
+  <p>{description}</p>
+  <a href={html_url} target="_blank" class="text-blue-500 hover:underline"> Open on github</a>
+  <div class="flex items-center space-x-2">
+    <span class="inline-flex items-center"
+      ><TbStarFilled />
+      {stargazers_count}</span
+    >
+    {license && <span>{license.name}</span>}
+    <span>{language}</span>
+  </div>
+</div>

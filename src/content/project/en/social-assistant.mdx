@@ -1,0 +1,54 @@
+---
+title: "Social assistant"
+description: "Social assistant is an app created to help you get insights on your followers"
+image: "/img/project/social-assistant.png"
+technologies: [Express.js, MongoDB, React, Redux]
+github: "https://github.com/ekrzeptowski/social-assist-ui"
+demo: "https://sa.ekrzeptowski.pl"
+date: 2020-12-01
+---
+
+import GithubRepo from "@/components/ui/GithubRepo.astro";
+
+## The idea
+
+Most of the apps, made to show the number of unfollowers on Twitter, I tried were performing too slow because of server-side rendering, or the UI was not optimized for mobile.
+
+That's why I decided to build a new app to perform this task.
+
+Live demo: [https://sa.ekrzeptowski.pl](sa.ekrzeptowski.pl)
+
+## Tech stack
+
+Social assistant is built using MERN stack:
+
+- **M**ongoDB
+- **E**xpressJS
+- **R**eact
+- **N**ode.js
+
+### Frontend
+
+The frontend side of the Social assistant is licensed under the MIT license and was written using Gatsby.js.
+
+<GithubRepo repo="ekrzeptowski/social-assist-ui" />
+
+#### Libraries used:
+
+- [Gatsby.js](https://www.gatsbyjs.com/) - it has helped to improve SEO and loading experience of the landing page.
+- [Material-UI](https://material-ui.com/) - Material Design React UI framework
+- [Redux](https://redux.js.org/) with [Redux Toolkit](https://redux-toolkit.js.org/) - used for state management
+- [gatsby-plugin-mdx](https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/) - used to render the privacy policy Markdown page
+
+### Backend
+
+The backend side of the Social assistant is running under Node.js.
+
+#### Libraries used:
+
+- [Express](https://expressjs.com/) - a Node.js framework
+- [MongoDB](https://www.mongodb.com/) - database
+- [ws](https://github.com/websockets/ws) - WebSocket server used to broadcast actual data sync status
+- [passport.js](http://www.passportjs.org/) - used for Twitter authentication
+- [twitter-lite](https://github.com/draftbit/twitter-lite) - lightweight library for Twitter API
+- [Agenda](https://github.com/agenda/agenda) - (A lightweight job scheduling library for Node.js) used for scheduling user data updates

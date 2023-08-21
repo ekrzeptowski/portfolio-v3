@@ -1,0 +1,67 @@
+---
+import { getCollection } from "astro:content";
+
+import Section from "../ui/Section.astro";
+import Heading from "../ui/Heading.astro";
+import i18next from "i18next";
+import { localizePath } from "astro-i18next";
+
+import { TbCode, TbExternalLink } from "react-icons/tb";
+
+const currentLang = i18next.language;
+
+const projects = await getCollection("project", ({ id }) => {
+  return id.startsWith(`${currentLang}/`);
+}).then((projects) => {
+  return projects.sort((a, b) => {
+    return b.data.date.getTime() - a.data.date.getTime();
+  });
+});
+---
+
+<Section id="projects">
+  <Heading level={2}>Projects</Heading>
+  <div class="flex flex-col divide-y-2">
+    {
+      projects.map((project) => (
+        <div class="flex gap-2 py-4 max-sm:flex-col">
+          <div class="basis-2/5 max-sm:order-2">
+            <a href={localizePath("/project/" + project.slug.split("/")[1], currentLang)}>
+              <Heading level={3}>{project.data.title}</Heading>
+            </a>
+            <p>{project.data.description}</p>
+            <div class="my-2 flex flex-wrap gap-2">
+              {project.data.technologies.map((tag) => (
+                <span class="inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700">
+                  {tag}
+                </span>
+              ))}
+            </div>
+            {project.data.github && (
+              <a
+                class="inline-flex items-center rounded border-2 border-blue-500 px-2 py-1 text-sm text-blue-500 hover:bg-blue-500 hover:text-white"
+                href={project.data.github}
+              >
+                Code
+                <TbCode className="ml-2" />
+              </a>
+            )}
+            {project.data.demo && (
+              <a
+                class="inline-flex items-center rounded border-2 border-blue-500 px-2 py-1 text-sm text-blue-500 hover:bg-blue-500 hover:text-white"
+                href={project.data.demo}
+                target="_blank"
+              >
+                Demo
+                <TbExternalLink className="ml-2" />
+              </a>
+            )}
+          </div>
+          <div class="basis-3/5 max-sm:order-1">
+            <img src={project.data.image} alt={`${project.data.title} preview image`} />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Section>

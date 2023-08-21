@@ -1,0 +1,54 @@
+---
+title: "Social assistant"
+description: "Aplikacja ułatwiająca analizę osób obserwujących na Twitterze"
+image: "/img/project/social-assistant.png"
+technologies: [Express.js, MongoDB, React, Redux]
+github: "https://github.com/ekrzeptowski/social-assist-ui"
+demo: "https://sa.ekrzeptowski.pl"
+date: 2020-12-01
+---
+
+## Pomysł
+
+Większość aplikacji, stworzona do analizy liczby osób obserwujących profil na Twitterze, które przetestowałam działała zbyt wolno poprzez renderowanie po stronie serwera, albo interfejs aplikacji nie był zoptymalizowany na urządzenia mobilne.
+
+Dlatego postanowiłam stworzyć nową aplikację przeznaczoną do tego celu.
+
+Demo: [https://sa.ekrzeptowski.pl](https://sa.ekrzeptowski.pl)
+
+## Stack technologiczny
+
+Social assistant został stworzony przy użyciu stacku MERN:
+
+- **M**ongoDB
+- **E**xpressJS
+- **R**eact
+- **N**ode.js
+
+### Frontend
+
+import GithubRepo from "@/components/ui/GithubRepo.astro";
+
+Strona frontendowa Social assistant-u icencjonowana na licencji MIT i została napisana przy użyciu Gatsby.js.
+
+<GithubRepo repo="ekrzeptowski/social-assist-ui" />
+
+#### Wykorzystane biblioteki:
+
+- [Gatsby.js](https://www.gatsbyjs.com/) - pomogło poprawić SEO i wrażenia z ładowania strony wstępu.
+- [Material-UI](https://material-ui.com/) - framework Material Design React UI
+- [Redux](https://redux.js.org/) with [Redux Toolkit](https://redux-toolkit.js.org/) - używane do zarządzania stanem aplikacji
+- [gatsby-plugin-mdx](https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/) - służy do wyświetlania strony z polityką prywatności Markdown
+
+### Backend
+
+Strona backend Social assistant działa w środowisku Node.js.
+
+#### Wykorzystane biblioteki:
+
+- [Express](https://expressjs.com/) - framework Node.js
+- [MongoDB](https://www.mongodb.com/) - baza danych
+- [ws](https://github.com/websockets/ws) - serwer WebSocket używany do informowania o aktualnym stanie synchronizacji danych
+- [passport.js](http://www.passportjs.org/) - wykorzystywany do autoryzacji konta Twitter
+- [twitter-lite](https://github.com/draftbit/twitter-lite) - lekka biblioteka API Twittera
+- [Agenda](https://github.com/agenda/agenda) - (Lekka biblioteka planowania zadań dla Node.js) używana do planowania aktualizacji danych użytkownika
