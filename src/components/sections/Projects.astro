@@ -3,7 +3,7 @@ import { getCollection } from "astro:content";
 
 import Section from "../ui/Section.astro";
 import Heading from "../ui/Heading.astro";
-import i18next from "i18next";
+import i18next, { t } from "i18next";
 import { localizePath } from "astro-i18next";
 
 import { TbCode, TbExternalLink } from "react-icons/tb";
@@ -20,7 +20,7 @@ const projects = await getCollection("project", ({ id }) => {
 ---
 
 <Section id="projects">
-  <Heading level={2}>Projects</Heading>
+  <Heading level={2}>{t("sections.projects.title")}</Heading>
   <div class="flex flex-col divide-y-2">
     {
       projects.map((project) => (
@@ -42,7 +42,7 @@ const projects = await getCollection("project", ({ id }) => {
                 class="inline-flex items-center rounded border-2 border-blue-500 px-2 py-1 text-sm text-blue-500 hover:bg-blue-500 hover:text-white"
                 href={project.data.github}
               >
-                Code
+                {t("sections.projects.view_code")}
                 <TbCode className="ml-2" />
               </a>
             )}
@@ -52,13 +52,13 @@ const projects = await getCollection("project", ({ id }) => {
                 href={project.data.demo}
                 target="_blank"
               >
-                Demo
+                {t("sections.projects.demo")}
                 <TbExternalLink className="ml-2" />
               </a>
             )}
           </div>
           <div class="basis-3/5 max-sm:order-1">
-            <img src={project.data.image} alt={`${project.data.title} preview image`} />
+            <img src={project.data.image} alt={`${project.data.title} ${t("sections.projects.preview_image")}`} />
           </div>
         </div>
       ))

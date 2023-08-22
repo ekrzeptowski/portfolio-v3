@@ -1,5 +1,5 @@
 ---
-import { changeLanguage } from "i18next";
+import { changeLanguage, t } from "i18next";
 import { getCollection } from "astro:content";
 import Heading from "@/components/ui/Heading.astro";
 import Layout from "@/layouts/Layout.astro";
@@ -29,7 +29,7 @@ changeLanguage(lang);
   </Heading>
 
   <main>
-    <img src={entry.data.image} alt={entry.data.title} />
+    <img src={entry.data.image} alt={`${entry.data.title} ${t("sections.projects.preview_image")}`} />
     <div class="prose prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline">
       <Content />
     </div>
