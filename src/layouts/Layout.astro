@@ -20,7 +20,14 @@ const { title, description } = Astro.props;
 <!DOCTYPE html>
 <html lang={i18next.language} class="scroll-smooth motion-reduce:scroll-auto">
   <head>
-    <SEO charset="UTF-8" description={description} title={title} />
+    <SEO
+      charset="UTF-8"
+      description={description}
+      title={title}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.svg" }],
+      }}
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="alternate" hreflang="x-default" href={localizeUrl(currentUrl, defaultLanguage)} />
