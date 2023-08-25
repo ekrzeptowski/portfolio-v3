@@ -24,11 +24,12 @@ changeLanguage(lang);
 ---
 
 <Layout title={entry.data.title + " | " + config.name}>
-  <Heading level={1}>
-    {entry.data.title}
-  </Heading>
-
-  <main>
+  <header class="mt-4">
+    <Heading level={1}>
+      {entry.data.title}
+    </Heading>
+  </header>
+  <main class="mb-4">
     <img src={entry.data.image} alt={`${entry.data.title} ${t("sections.projects.preview_image")}`} />
     <div
       class="prose prose-stone dark:prose-invert prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline dark:prose-a:text-blue-500"
