@@ -2,6 +2,8 @@
 import i18next from "i18next";
 import { SEO } from "astro-seo";
 import { AstroI18next, localizeUrl } from "astro-i18next";
+import "@fontsource-variable/inter";
+import Navbar from "../components/ui/Navbar.astro";
 
 interface Props {
   title: string;
@@ -16,7 +18,7 @@ const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang={i18next.language}>
+<html lang={i18next.language} class="scroll-smooth motion-reduce:scroll-auto">
   <head>
     <SEO charset="UTF-8" description={description} title={title} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,10 +29,21 @@ const { title, description } = Astro.props;
         <link rel="alternate" hreflang={supportedLanguage} href={localizeUrl(currentUrl, supportedLanguage)} />
       ))
     }
+    <script client:load>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
-  <body>
+  <body class="dark:bg-gray-800">
+    <Navbar />
     <div class="flex flex-col items-center justify-center">
-      <div class="flex h-full w-full max-w-screen-md flex-col">
+      <div class="flex h-full w-full max-w-screen-md flex-col px-2">
         <slot />
       </div>
     </div>

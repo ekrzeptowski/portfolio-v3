@@ -2,6 +2,14 @@
   "home": {
     "description": "Ewelina Krzeptowska - Full Stack Developer"
   },
+  "nav": {
+    "language": "Language",
+    "theme_switcher": {
+      "light": "Light mode",
+      "dark": "Dark mode",
+      "auto": "Auto mode"
+    }
+  },
   "sections": {
     "about": {
       "title": "About",

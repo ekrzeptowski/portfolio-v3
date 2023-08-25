@@ -2,6 +2,14 @@
   "home": {
     "description": "Ewelina Krzeptowska - Programista Full Stack"
   },
+  "nav": {
+    "language": "Język",
+    "theme_switcher": {
+      "light": "Tryb jasny",
+      "dark": "Tryb ciemny",
+      "auto": "Tryb automatyczny"
+    }
+  },
   "sections": {
     "about": {
       "title": "O mnie",
