@@ -6,6 +6,7 @@ import { education } from "@/data/education";
 import { TbSchool, TbCertificate, TbExternalLink } from "react-icons/tb";
 import type { Education } from "../../types/Education";
 import Section from "../ui/Section.astro";
+import Link from "../ui/Link.astro";
 
 // sort education by date descending, put degrees first
 
@@ -30,16 +31,12 @@ const educationSorted = [...degrees, ...nonDegrees];
 <Section id="education">
   <Heading level={2}>{t("sections.education.title")}</Heading>
 
-  <div class="flex flex-col divide-y-2">
+  <div class="flex flex-col divide-y-2 dark:divide-stone-700">
     {
       educationSorted.map((item) => (
         <div class="flex items-center py-4 max-sm:flex-wrap">
-          <div class="mr-2 rounded-full border-2 border-gray-500 p-2">
-            {"degree_" + i18next.language in item ? (
-              <TbSchool className="text-3xl text-gray-500" />
-            ) : (
-              <TbCertificate className="text-3xl text-gray-500" />
-            )}
+          <div class="mr-2 rounded-full border-2 border-stone-500 p-2 text-3xl text-stone-500 dark:border-stone-300 dark:text-stone-300">
+            {"degree_" + i18next.language in item ? <TbSchool /> : <TbCertificate />}
           </div>
           <div class="flex-1">
             <div class="text-lg font-semibold">{item.name}</div>
@@ -47,14 +44,10 @@ const educationSorted = [...degrees, ...nonDegrees];
               {"issuer" in item ? (
                 <>
                   {item.issuer}
-                  <a
-                    class="ml-2 inline-flex items-center rounded border-2 border-blue-500 px-2 py-1 text-blue-500 hover:bg-blue-500 hover:text-white"
-                    target="_blank"
-                    href={item.link}
-                  >
+                  <Link class="ml-2" type="button" href={item.link}>
                     {t("sections.education.show_credential")}
                     <TbExternalLink />
-                  </a>
+                  </Link>
                 </>
               ) : (
                 `${item[("degree_" + i18next.language) as keyof Education]}, ${
@@ -63,7 +56,7 @@ const educationSorted = [...degrees, ...nonDegrees];
               )}
             </div>
           </div>
-          <div class="text-sm text-gray-500 max-sm:basis-full max-sm:pt-4 max-sm:text-right">
+          <div class="text-sm text-stone-500 dark:text-stone-300 max-sm:basis-full max-sm:pt-4 max-sm:text-right">
             {item.date instanceof Date
               ? item.date.toLocaleString(i18next.language, { month: "long", year: "numeric" })
               : item.date.start.toLocaleString(i18next.language, { month: "long", year: "numeric" }) +

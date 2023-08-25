@@ -3,6 +3,7 @@ import i18next, { t } from "i18next";
 import ISO6991 from "iso-639-1";
 import { localizePath } from "astro-i18next";
 import { NightSwitch } from "./NightSwitch";
+import { config } from "@/config";
 
 const supportedLanguages = i18next.languages;
 const currentLanguage = i18next.language;
@@ -19,15 +20,15 @@ const { pathname } = Astro.url;
 const navItems = [
   {
     name: t("sections.about.title"),
-    url: "#about",
+    url: localizePath("/", currentLanguage) + "#about",
   },
   {
     name: t("sections.projects.title"),
-    url: "#projects",
+    url: localizePath("/", currentLanguage) + "#projects",
   },
   {
     name: t("sections.contact.title"),
-    url: "#contact",
+    url: localizePath("/", currentLanguage) + "#contact",
   },
 ];
 ---
@@ -35,9 +36,9 @@ const navItems = [
 <div class="h-8"></div>
 <header class="sticky top-1 w-full">
   <div
-    class="mx-auto flex max-w-screen-md items-center border border-gray-300 bg-blue-50 bg-opacity-40 px-2 py-4 shadow-md backdrop-blur-lg md:rounded-lg"
+    class="mx-auto flex max-w-screen-md items-center border border-stone-400 border-opacity-50 bg-blue-50 bg-opacity-40 px-2 py-4 shadow-md backdrop-blur-lg dark:border-stone-900 dark:bg-stone-800 dark:bg-opacity-50 max-md:border-x-0 md:rounded-lg"
   >
-    <a class="w-6" href={localizePath("/", currentLanguage)}>
+    <a class="w-6" title={config.name} href={localizePath("/", currentLanguage)}>
       <svg
         width="40"
         height="40"

@@ -2,6 +2,10 @@ import { useTranslation } from "react-i18next";
 import { FormEvent, useState } from "react";
 import { BiPaperPlane } from "react-icons/bi/";
 
+const labelClasses = "text-sm font-bold uppercase text-stone-800 dark:text-stone-200";
+const inputClasses =
+  "w-full appearance-none rounded border px-3 py-2 leading-tight text-stone-800 shadow outline-none ring-offset-stone-50 transition-shadow focus:ring focus:ring-blue-500 focus:ring-offset-2 dark:border-stone-600 dark:bg-stone-800 dark:text-stone-200 dark:ring-offset-stone-900";
+
 export function ContactForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -49,13 +53,13 @@ export function ContactForm() {
       <form onSubmit={handleSubmit} className="w-full max-w-lg">
         <div className="mb-4">
           <div className="mb-2">
-            <label htmlFor="email" className="text-sm font-bold uppercase text-gray-800">
+            <label htmlFor="email" className={labelClasses}>
               {t("sections.contact.email")}
             </label>
           </div>
           <input
             type="email"
-            className="w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-800 shadow transition-shadow focus:outline-none focus:ring focus:ring-blue-500 focus:ring-offset-1"
+            className={inputClasses}
             required
             id="email"
             aria-describedby="emailHelp"
@@ -66,12 +70,12 @@ export function ContactForm() {
         </div>
         <div className="mb-4">
           <div className="mb-2">
-            <label htmlFor="message" className="text-sm font-bold uppercase text-gray-800">
+            <label htmlFor="message" className={labelClasses}>
               {t("sections.contact.message")}
             </label>
           </div>
           <textarea
-            className="w-full resize-none appearance-none rounded border px-3 py-2 leading-tight text-gray-800 shadow transition-shadow focus:outline-none focus:ring focus:ring-blue-500 focus:ring-offset-1"
+            className={inputClasses + " resize-none"}
             id="message"
             rows={8}
             value={message}
@@ -87,7 +91,7 @@ export function ContactForm() {
           {error && <div role="alert">{error}</div>}
           <button
             type="submit"
-            className="flex items-center rounded bg-blue-500 px-3 py-2 text-white transition-shadow hover:ring"
+            className="flex items-center rounded bg-blue-600 px-3 py-2 text-white transition-shadow hover:ring"
           >
             <BiPaperPlane className="mr-1" />
             {t("sections.contact.send")}

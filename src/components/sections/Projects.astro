@@ -7,6 +7,7 @@ import i18next, { t } from "i18next";
 import { localizePath } from "astro-i18next";
 
 import { TbCode, TbExternalLink } from "react-icons/tb";
+import Link from "../ui/Link.astro";
 
 const currentLang = i18next.language;
 
@@ -21,7 +22,7 @@ const projects = await getCollection("project", ({ id }) => {
 
 <Section id="projects">
   <Heading level={2}>{t("sections.projects.title")}</Heading>
-  <div class="flex flex-col divide-y-2">
+  <div class="flex flex-col divide-y-2 dark:divide-stone-700">
     {
       projects.map((project) => (
         <div class="flex gap-2 py-4 max-sm:flex-col">
@@ -32,29 +33,22 @@ const projects = await getCollection("project", ({ id }) => {
             <p>{project.data.description}</p>
             <div class="my-2 flex flex-wrap gap-2">
               {project.data.technologies.map((tag) => (
-                <span class="inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700">
+                <span class="inline-block rounded-full bg-stone-200 px-3 py-1 text-sm font-semibold text-stone-700 dark:bg-stone-700 dark:text-stone-200">
                   {tag}
                 </span>
               ))}
             </div>
             {project.data.github && (
-              <a
-                class="inline-flex items-center rounded border-2 border-blue-500 px-2 py-1 text-sm text-blue-500 hover:bg-blue-500 hover:text-white"
-                href={project.data.github}
-              >
+              <Link type="button" href={project.data.github}>
                 {t("sections.projects.view_code")}
                 <TbCode className="ml-2" />
-              </a>
+              </Link>
             )}
             {project.data.demo && (
-              <a
-                class="inline-flex items-center rounded border-2 border-blue-500 px-2 py-1 text-sm text-blue-500 hover:bg-blue-500 hover:text-white"
-                href={project.data.demo}
-                target="_blank"
-              >
+              <Link type="button" href={project.data.demo} target="_blank">
                 {t("sections.projects.demo")}
                 <TbExternalLink className="ml-2" />
-              </a>
+              </Link>
             )}
           </div>
           <div class="basis-3/5 max-sm:order-1">
