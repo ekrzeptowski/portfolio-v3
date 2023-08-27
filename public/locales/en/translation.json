@@ -14,7 +14,7 @@
     "about": {
       "title": "About",
       "content": [
-        "Hello and welcome to my portfolio website. My name is Ewelina Krzeptowska and I am a Computer Science student who is passionate about web development. I have experience in creating full stack web applications using various technologies and frameworks, such as React, Node.js, MongoDB, Express, Bootstrap, HTML, CSS, and JavaScript. I enjoy learning new skills and exploring new challenges in the field of web development.",
+        "Hello and welcome to my portfolio website. My name is Ewelina Krzeptowska and I am a Computer Science student who is passionate about web development. I have experience in creating **full stack web applications** using various technologies and frameworks, such as **React**, **Node.js**, **MongoDB**, **Express**, **Bootstrap**, **HTML**, **CSS**, and **JavaScript**. I enjoy learning new skills and exploring new challenges in the field of web development.",
         "In this website, you can find some of the projects that I have worked on, as well as my resume and contact information. I am currently looking for a job as a full stack web developer, so feel free to reach out to me if you are interested in hiring me or collaborating with me. Thank you for visiting my website and I hope you enjoy it. \uD83D\uDE0A"
       ]
     },
