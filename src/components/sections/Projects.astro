@@ -23,12 +23,15 @@ const projects = await getCollection("project", ({ id }) => {
 
 <Section id="projects">
   <Heading level={2}>{t("sections.projects.title")}</Heading>
-  <div class="flex flex-col divide-y-2 dark:divide-stone-700">
+  <div class="flex flex-col divide-y-2 divide-stone-200 dark:divide-stone-700">
     {
       projects.map((project) => (
         <div class="flex gap-2 py-4 max-sm:flex-col">
           <div class="basis-2/5 max-sm:order-2">
-            <a href={localizePath("/project/" + project.slug.split("/")[1], currentLang)}>
+            <a
+              class="underline decoration-2 hover:no-underline"
+              href={localizePath("/project/" + project.slug.split("/")[1], currentLang)}
+            >
               <Heading level={3}>{project.data.title}</Heading>
             </a>
             <p>{project.data.description}</p>
