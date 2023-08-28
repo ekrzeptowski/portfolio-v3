@@ -47,6 +47,11 @@ const { title, description } = Astro.props;
         document.documentElement.classList.remove("dark");
       }
     </script>
+    {
+      import.meta.env.DOMAIN_NAME && import.meta.env.PLAUSIBLE_URL && (
+        <script is:inline defer data-domain={import.meta.env.DOMAIN_NAME} src={import.meta.env.PLAUSIBLE_URL} />
+      )
+    }
   </head>
   <body class="bg-stone-50 text-stone-900 dark:bg-stone-900 dark:text-stone-200">
     <Navbar />
