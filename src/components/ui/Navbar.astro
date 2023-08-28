@@ -75,7 +75,7 @@ const navItems = [
         {
           navItems.map((item) => (
             <li>
-              <a href={item.url} class="px-4 py-2 hover:underline">
+              <a href={item.url} class="px-4 py-2 decoration-2 hover:underline">
                 {item.name}
               </a>
             </li>
@@ -88,7 +88,7 @@ const navItems = [
         (supportedLanguage: string) =>
           supportedLanguage !== currentLanguage && (
             <a
-              class="px-4 py-2 hover:underline"
+              class="px-4 py-2 decoration-2 hover:underline"
               title={ISO6991.getNativeName(supportedLanguage)}
               href={localizePath(pathname, supportedLanguage)}
             >
