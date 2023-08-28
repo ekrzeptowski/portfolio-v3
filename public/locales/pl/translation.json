@@ -4,6 +4,7 @@
   },
   "nav": {
     "language": "Język",
+    "toggle_navigation": "Przełącz nawigację",
     "theme_switcher": {
       "light": "Tryb jasny",
       "dark": "Tryb ciemny",

@@ -4,6 +4,7 @@
   },
   "nav": {
     "language": "Language",
+    "toggle_navigation": "Toggle navigation",
     "theme_switcher": {
       "light": "Light mode",
       "dark": "Dark mode",
