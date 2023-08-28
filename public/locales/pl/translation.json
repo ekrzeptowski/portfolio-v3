@@ -46,5 +46,10 @@
       "current_time": "Teraz u mnie jest <1>{{time}}</1>",
       "im_asleep": "W tej chwili mogę nie odpowiadać, bo śpię. Odpiszę jak tylko się obudzę."
     }
+  },
+  "footer": {
+    "all_rights_reserved": "Wszelkie prawa zastrzeżone",
+    "made_with": "Wykonano przy użyciu",
+    "developed_by": "Stworzone z ☕ przez"
   }
 }

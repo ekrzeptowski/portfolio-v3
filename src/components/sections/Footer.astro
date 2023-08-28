@@ -1,0 +1,18 @@
+---
+import { config } from "@/config";
+import Link from "../ui/Link.astro";
+import { t } from "i18next";
+---
+
+<footer class="mt-8 border-t border-stone-200 py-8 dark:border-stone-700">
+  <p class="text-stone-700 dark:text-stone-400">
+    &copy; {new Date().getFullYear()} | {t("footer.all_rights_reserved")}.
+  </p>
+  <p class="text-stone-700 dark:text-stone-400">{t("footer.made_with")} Astro, Tailwind</p>
+  <p class="text-lg">
+    {t("footer.developed_by")}
+    <Link inheritColor target="_blank" href={"https://github.com/" + config.contact.github}>
+      {config.name}
+    </Link>
+  </p>
+</footer>

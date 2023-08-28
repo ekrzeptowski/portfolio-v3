@@ -5,6 +5,7 @@ import { Picture } from "astro-imagetools/components";
 import Heading from "@/components/ui/Heading.astro";
 import Layout from "@/layouts/Layout.astro";
 import { config } from "@/config";
+import Footer from "@/components/sections/Footer.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("project");
@@ -38,4 +39,5 @@ changeLanguage(lang);
       <Content />
     </div>
   </main>
+  <Footer />
 </Layout>

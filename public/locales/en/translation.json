@@ -46,5 +46,10 @@
       "current_time": "Currently it's <1>{{time}}</1> at my timezone",
       "im_asleep": "I may be asleep at this time, but I'll get back to you as soon as I can!"
     }
+  },
+  "footer": {
+    "all_rights_reserved": "All rights reserved",
+    "made_with": "Made with",
+    "developed_by": "Developed with ☕ by"
   }
 }
