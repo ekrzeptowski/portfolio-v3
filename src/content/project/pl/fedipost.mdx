@@ -1,0 +1,43 @@
+---
+title: "Fedipost"
+description: "Fedipost to aplikacja do planowania postów w sieciach społecznościowych fediverse, przy użyciu wbudowanych interfejsów API."
+image: "/src/img/project/fedipost.png"
+technologies: [Next.js, Redux, RTK Query, shadcn/ui]
+github: "https://github.com/ekrzeptowski/fedipost"
+demo: "https://fedipost.vercel.app/"
+date: 2024-01-05
+---
+
+import GithubRepo from "@/components/ui/GithubRepo.astro";
+
+Demo aplikacji: [fedipost.vercel.app](https://fedipost.vercel.app/)
+
+## Wykorzystane biblioteki:
+
+- [Next.js](https://nextjs.org/) - Framework React
+- [Redux](https://redux.js.org/) - Zarządzanie stanem
+- [RTK Query](https://redux-toolkit.js.org/rtk-query/overview) - Efektywne narzędzie do pobierania i buforowania danych.
+- [shadcn/ui](https://ui.shadcn.com/) - Framework CSS
+- [Zod](https://zod.dev/) - Walidacja wprowadzanych danych
+
+## Funkcje
+
+- Zaplanuj publikację postów na Mastodon, Pleroma, Misskey, Firefish.
+- Wykorzystuje wbudowane interfejsy API do planowania.
+- Nie ma potrzeby uruchamiania serwera poza wykrywaniem typu instancji (aby uniknąć problemów z CORS).
+
+## Jak to działa?
+
+1. Przejdź do [fedipost.vercel.app](https://fedipost.vercel.app/)
+2. Kliknij "Get Started"
+3. Wpisz adres URL swojej instancji
+4. Kliknij "Wyślij"
+5. Autoryzuj aplikację
+
+---
+
+Jestem otwarta na wszelkie sugestie dotyczące projektu. Możesz również wprowadzić swoje pomysły do tego projektu poprzez kontrybucję.
+
+Link do repozytorium na GitHub:
+
+<GithubRepo repo="ekrzeptowski/fedipost" />

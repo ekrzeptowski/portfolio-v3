@@ -1,0 +1,43 @@
+---
+title: "Fedipost"
+description: "Fedipost is a fediverse post scheduler using builtin scheduling functionality."
+image: "/src/img/project/fedipost.png"
+technologies: [Next.js, Redux, RTK Query, shadcn/ui]
+github: "https://github.com/ekrzeptowski/fedipost"
+demo: "https://fedipost.vercel.app/"
+date: 2024-01-05
+---
+
+import GithubRepo from "@/components/ui/GithubRepo.astro";
+
+Live demo: [fedipost.vercel.app](https://fedipost.vercel.app/)
+
+## Libraries used:
+
+- [Next.js](https://nextjs.org/) - React framework
+- [Redux](https://redux.js.org/) - State management
+- [RTK Query](https://redux-toolkit.js.org/rtk-query/overview) - An efficient data fetching and caching tool.
+- [shadcn/ui](https://ui.shadcn.com/) - CSS framework
+- [Zod](https://zod.dev/) - Validation
+
+## Features
+
+- Schedule posts to be published on Mastodon, Pleroma, Misskey, Firefish.
+- Utilizes builtin scheduling API.
+- No need to run a server apart from instance type detection (in order to avoid CORS issues).
+
+## How to use
+
+1. Go to [fedipost.vercel.app](https://fedipost.vercel.app/)
+2. Click "Get started"
+3. Type in your instance URL
+4. Click "Submit"
+5. Authorize the app
+
+---
+
+I'd love to hear your feedback about this app. You can also introduce your ideas to this project by contributing to it.
+
+Here's a link for the GitHub repo:
+
+<GithubRepo repo="ekrzeptowski/fedipost" />
