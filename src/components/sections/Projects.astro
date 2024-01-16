@@ -35,6 +35,12 @@ const projects = await getCollection("project", ({ id }) => {
               <Heading level={3}>{project.data.title}</Heading>
             </a>
             <p>{project.data.description}</p>
+            <a
+              class="my-4 inline-block underline decoration-2 hover:no-underline"
+              href={localizePath("/project/" + project.slug.split("/")[1], currentLang)}
+            >
+              {t("sections.projects.read_more")}
+            </a>
             <div class="my-2 flex flex-wrap gap-2">
               {project.data.technologies.map((tag) => (
                 <span class="inline-block rounded-full bg-stone-200 px-3 py-1 text-sm font-semibold text-stone-700 dark:bg-stone-700 dark:text-stone-200">

@@ -25,6 +25,7 @@
     "projects": {
       "title": "Projects",
       "demo": "Demo",
+      "read_more": "Read more",
       "view_code": "View code",
       "preview_image": "preview image"
     },
