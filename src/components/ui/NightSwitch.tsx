@@ -7,7 +7,10 @@ export const NightSwitch = () => {
     light: <TbSun />,
     dark: <TbMoon />,
   };
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || null);
+  const initialTheme =
+    typeof window !== "undefined" && typeof window.localStorage !== "undefined" ? localStorage.getItem("theme") : null;
+
+  const [theme, setTheme] = useState(initialTheme);
   const changeTheme = () => {
     const newTheme = theme === "light" ? "dark" : theme === "dark" ? null : "light";
     newTheme ? localStorage.setItem("theme", newTheme) : localStorage.removeItem("theme");
