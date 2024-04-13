@@ -4,7 +4,6 @@ import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
-import { astroImageTools } from "astro-imagetools";
 import sitemap from "@astrojs/sitemap";
 
 import robotsTxt from "astro-robots-txt";
@@ -13,12 +12,15 @@ import robotsTxt from "astro-robots-txt";
 export default defineConfig({
   adapter: vercel(),
   output: "hybrid",
+  i18n: {
+    defaultLocale: "pl",
+    locales: ["en", "pl"],
+  },
   integrations: [
     astroI18next(),
     tailwind(),
     react(),
     mdx(),
-    astroImageTools,
     sitemap({
       i18n: {
         defaultLocale: "pl",

@@ -17,7 +17,7 @@ const currentUrl = Astro.url.href;
 const { title, description } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang={i18next.language} class="scroll-smooth motion-reduce:scroll-auto">
   <head>
     <SEO
@@ -37,7 +37,7 @@ const { title, description } = Astro.props;
         <link rel="alternate" hreflang={supportedLanguage} href={localizeUrl(currentUrl, supportedLanguage)} />
       ))
     }
-    <script client:load>
+    <script is:inline>
       if (
         localStorage.theme === "dark" ||
         (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)

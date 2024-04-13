@@ -14,7 +14,7 @@ const ratelimit = new Ratelimit({
 });
 export const prerender = false;
 
-export const post: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request }) => {
   const bot = new Telegraf(import.meta.env.TELEGRAM_BOT_TOKEN ?? "");
   // parse form json
   const { email, message } = await request.json();
@@ -62,11 +62,7 @@ export const post: APIRoute = async ({ request }) => {
   return bot.telegram
     .sendMessage(import.meta.env.TELEGRAM_CHAT_ID ?? "", `New message from ${email}:\n${message}`)
     .then(() => {
-      return {
-        body: JSON.stringify({
-          message: "Message sent",
-        }),
-      };
+      return new Response(JSON.stringify({ message: "Message sent" }), { status: 200 });
     })
     .catch((error) => {
       return new Response(

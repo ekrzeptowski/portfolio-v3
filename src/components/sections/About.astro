@@ -3,7 +3,9 @@ import Heading from "../ui/Heading.astro";
 import { t } from "i18next";
 import Section from "../ui/Section.astro";
 import { marked } from "marked";
-import { Picture } from "astro-imagetools/components";
+import { Image } from "astro:assets";
+
+import profileImage from "../../img/profile.png";
 ---
 
 <Section id="about">
@@ -18,7 +20,7 @@ import { Picture } from "astro-imagetools/components";
       }
     </div>
     <aside class="h-full max-w-xs flex-shrink-0 overflow-clip rounded-full bg-stone-100 shadow-lg dark:bg-stone-800">
-      <Picture loading="eager" width={320} src="/src/img/profile.png" alt="Profile image" />
+      <Image loading="eager" width={320} densities={[1, 2]} src={profileImage} alt="Profile image" />
     </aside>
   </div>
 </Section>

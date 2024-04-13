@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
-import { FormEvent, useState } from "react";
-import { BiPaperPlane } from "react-icons/bi/";
+import { type FormEvent, useState } from "react";
+import { BiPaperPlane } from "react-icons/bi";
 
 const labelClasses = "text-sm font-bold uppercase text-stone-800 dark:text-stone-200";
 const inputClasses =

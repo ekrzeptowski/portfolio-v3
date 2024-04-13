@@ -102,11 +102,11 @@ const navItems = [
           )
       )
     }
-    <NightSwitch client:load />
+    <NightSwitch client:only="react" />
   </div>
 </header>
 
-<script client:load>
+<script is:inline>
   const hamburgerToggle = document.getElementById("hamburger-toggle");
   const mobileNav = document.getElementById("mobile-nav");
   hamburgerToggle.addEventListener("click", () => {

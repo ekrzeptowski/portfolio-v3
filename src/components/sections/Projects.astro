@@ -5,7 +5,7 @@ import Section from "../ui/Section.astro";
 import Heading from "../ui/Heading.astro";
 import i18next, { t } from "i18next";
 import { localizePath } from "astro-i18next";
-import { Picture } from "astro-imagetools/components";
+import { Image } from "astro:assets";
 
 import { TbCode, TbExternalLink } from "react-icons/tb";
 import Link from "../ui/Link.astro";
@@ -62,7 +62,14 @@ const projects = await getCollection("project", ({ id }) => {
             )}
           </div>
           <div class="basis-3/5 max-sm:order-1">
-            <Picture src={project.data.image} alt={`${project.data.title} ${t("sections.projects.preview_image")}`} />
+            {project.data.image && (
+              <Image
+                src={project.data.image}
+                width={450}
+                densities={[1, 2]}
+                alt={`${project.data.title} ${t("sections.projects.preview_image")}`}
+              />
+            )}
           </div>
         </div>
       ))

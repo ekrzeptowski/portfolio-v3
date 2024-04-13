@@ -1,11 +1,11 @@
 ---
 import { changeLanguage, t } from "i18next";
 import { getCollection } from "astro:content";
-import { Picture } from "astro-imagetools/components";
 import Heading from "@/components/ui/Heading.astro";
 import Layout from "@/layouts/Layout.astro";
 import { config } from "@/config";
 import Footer from "@/components/sections/Footer.astro";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const projects = await getCollection("project");
@@ -32,7 +32,16 @@ changeLanguage(lang);
     </Heading>
   </header>
   <main class="mb-4">
-    <Picture src={entry.data.image} alt={`${entry.data.title} ${t("sections.projects.preview_image")}`} />
+    {
+      entry.data.image && (
+        <Image
+          src={entry.data.image}
+          width={750}
+          densities={[1, 2]}
+          alt={`${entry.data.title} ${t("sections.projects.preview_image")}`}
+        />
+      )
+    }
     <div
       class="prose prose-stone dark:prose-invert prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline dark:prose-a:text-blue-500"
     >
