@@ -7,6 +7,7 @@ date: 2024-02-11
 ---
 
 import { Image } from "astro:assets";
+import GithubRepo from "@/components/ui/GithubRepo.astro";
 
 import schedy2 from "../../../img/project/schedy2.png";
 
@@ -31,6 +32,10 @@ Schedy is a cutting-edge post scheduling application tailored for Reddit, enabli
 - **React**: JavaScript library for building user interfaces.
 - **BullMQ**: Job queue for scheduling and processing tasks.
 - **TypeScript**: Static type checking for codebase reliability.
+
+Schedy uses <a href="https://github.com/ekrzeptowski/snoots-revived" target="_blank">snoots-revived</a>, to interact with Reddit's API.
+
+<GithubRepo repo="ekrzeptowski/snoots-revived" />
 
 <Image src={schedy2} width={450} densities={[1, 2]} alt="Schedy subreddit validation" />
 

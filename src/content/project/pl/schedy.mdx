@@ -7,6 +7,7 @@ date: 2024-02-11
 ---
 
 import { Image } from "astro:assets";
+import GithubRepo from "@/components/ui/GithubRepo.astro";
 
 import schedy2 from "../../../img/project/schedy2.png";
 
@@ -31,6 +32,10 @@ Schedy to nowoczesna aplikacja do planowania postów na Reddit, umożliwiająca 
 - **React**: Biblioteka JavaScript do tworzenia interfejsów użytkownika.
 - **BullMQ**: Kolejka zadań do planowania i przetwarzania zadań.
 - **TypeScript**: Statyczne sprawdzanie typów dla niezawodności kodu.
+
+Schedy wykorzystuje <a href="https://github.com/ekrzeptowski/snoots-revived" target="_blank">snoots-revived</a>, do interakcji z API Reddita.
+
+<GithubRepo repo="ekrzeptowski/snoots-revived" />
 
 <Image src={schedy2} width={450} densities={[1, 2]} alt="Walidacja postu w Schedy" />
 
