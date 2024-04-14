@@ -1,0 +1,37 @@
+---
+title: "Schedy"
+description: "Schedy to narzędzie do planowania postów postów na Reddit, które ułatwia zarządzanie treścią i planowanie."
+image: "/src/img/project/schedy.png"
+technologies: [Next.js, React Query, Prisma, PostgreSQL, AWS S3]
+date: 2024-02-11
+---
+
+import { Image } from "astro:assets";
+
+import schedy2 from "../../../img/project/schedy2.png";
+
+**Schedy: Harmonogram postów dla Reddita**
+
+Schedy to nowoczesna aplikacja do planowania postów na Reddit, umożliwiająca użytkownikom łatwe zarządzanie i planowanie ich treści. Dzięki Schedy, złożoność związana z czasem publikacji i wyborem subredditów jest uproszczona dzięki interfejsowi skoncentrowanemu na użytkowniku, który jest świetny zarówno dla nowych, jak i doświadczonych użytkowników Reddita.
+
+**Kluczowe funkcje:**
+
+- **Intuicyjne Planowanie**: Ustaw swoje posty, aby były publikowane w konkretnych datach i godzinach, aby maksymalizować zaangażowanie użytkowników.
+- **Integracja z Reddit**: Łatwo połącz swoje konto na Reddit, wybierz subreddity i przypisz flairy do swoich postów.
+- **Kalendarz**: Kompleksowy widok kalendarza pomaga w śledzeniu i organizowaniu zaplanowanej treści.
+
+**Wykorzystane technologie:**
+
+- **AWS S3**: Przechowywanie plików.
+- **PostgreSQL**: Baza danych do przechowywania danych użytkowników i zaplanowanych treści.
+- **Prisma**: ORM do operacji na bazie danych.
+- **Supabase**: Usługi autoryzacji oraz przechowywanie danych.
+- **React Query**: Pobieranie i buforowanie danych dla optymalnej wydajności.
+- **Next.js**: Framework Reacta do renderowania po stronie serwera i generowania statycznych stron.
+- **React**: Biblioteka JavaScript do tworzenia interfejsów użytkownika.
+- **BullMQ**: Kolejka zadań do planowania i przetwarzania zadań.
+- **TypeScript**: Statyczne sprawdzanie typów dla niezawodności kodu.
+
+<Image src={schedy2} width={450} densities={[1, 2]} alt="Walidacja postu w Schedy" />
+
+Schedy wspiera walidację postów, zapewniając, że twoja treść spełnia wymagania wybranych subredditów. Poprzez dostarczanie informacji zwrotnej w czasie rzeczywistym na temat długości posta, tytułu i flaira.

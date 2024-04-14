@@ -1,0 +1,37 @@
+---
+title: "Schedy"
+description: "Schedy is a Reddit post scheduler that simplifies content management and scheduling."
+image: "/src/img/project/schedy.png"
+technologies: [Next.js, React Query, Prisma, PostgreSQL, AWS S3]
+date: 2024-02-11
+---
+
+import { Image } from "astro:assets";
+
+import schedy2 from "../../../img/project/schedy2.png";
+
+**Schedy: A Post Scheduler for Reddit**
+
+Schedy is a cutting-edge post scheduling application tailored for Reddit, enabling users to effortlessly manage and plan their content. With Schedy, the complexities of post timing and subreddit selection are simplified through a user-centric interface that’s great for new and experienced Reddit users .
+
+**Key Features:**
+
+- **Intuitive Scheduling**: Set your posts to go live at specific dates and times to maximize engagement.
+- **Seamless Reddit Integration**: Easily link your Reddit account, select subreddits, and assign flairs to your posts.
+- **Visual Calendar**: A comprehensive calendar view aids in tracking and organizing your scheduled content.
+
+**Technological Backbone:**
+
+- **AWS S3**: File storage for images and media.
+- **PostgreSQL**: Database for storing user and scheduling data.
+- **Prisma**: ORM for database operations.
+- **Supabase**: Authentication and authorization services and data storage.
+- **React Query**: Data fetching and caching for optimal performance.
+- **Next.js**: React framework for server-side rendering and static site generation.
+- **React**: JavaScript library for building user interfaces.
+- **BullMQ**: Job queue for scheduling and processing tasks.
+- **TypeScript**: Static type checking for codebase reliability.
+
+<Image src={schedy2} width={450} densities={[1, 2]} alt="Schedy subreddit validation" />
+
+Schedy supports post validation, ensuring that your content meets the requirements of the selected subreddits. By providing real-time feedback on post length, title, and flair.
