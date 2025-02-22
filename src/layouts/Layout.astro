@@ -48,8 +48,8 @@ const { title, description } = Astro.props;
       }
     </script>
     {
-      import.meta.env.DOMAIN_NAME && import.meta.env.PLAUSIBLE_URL && (
-        <script is:inline defer data-domain={import.meta.env.DOMAIN_NAME} src={import.meta.env.PLAUSIBLE_URL} />
+      import.meta.env.WEBSITE_ID && import.meta.env.UMAMI_URL && (
+        <script is:inline defer data-website-id={import.meta.env.WEBSITE_ID} src={import.meta.env.UMAMI_URL} />
       )
     }
   </head>
